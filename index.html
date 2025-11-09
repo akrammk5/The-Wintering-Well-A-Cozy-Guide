@@ -1,103 +1,733 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Wintering Well | Cozy Guide for Mindful Winter</title>
-  <meta name="description" content="Escape the winter blues with The Wintering Well – your mindful companion for cozy, joyful, and restorative winter days. Now on Amazon UK."/>
-  <!-- OPEN GRAPH AND SOCIAL META HERE (as in your sample) -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles-enhanced.css"/>
-  <style>
-    body { font-family: 'Inter', Arial, sans-serif; margin:0; background:#fff; color:#222;}
-    .hero {padding:2em 1em 1em 1em; text-align:center; background:linear-gradient(120deg,#e3f0fa,#f8fafb);}
-    .hero img {max-width:220px; margin:1em auto;}
-    .cta {display:inline-block; margin:1.5em auto .5em auto; padding:1.1em 2.5em; background:#0066c0; color:#fff; border:none; border-radius:4px; font-size:1.2em; font-weight:700; text-decoration:none;}
-    .cta:hover {background:#004a91;}
-    .benefits, .social-proof, .bonus, .faq, .guarantee, .footer {width:100%;max-width:630px;margin:2em auto;padding:0 8px;}
-    .benefits ul, .faq ul {text-align:left;line-height:1.7;}
-    .social-proof{background:#f3f7fa; border-radius:12px; padding:1.5em 1em;}
-    .stars {font-size:1.2em; color:#ffae00;}
-    .bonus, .guarantee {background:#faede2; border-radius:12px;}
-    .urgent {background:#fff5da; color:#665200;padding:.7em 1.1em;display:inline-block;margin-bottom:1em;border-radius:5px;font-weight:600;}
-    .faq h3 {margin-top:1em;}
-    /* Mobile Responsive */
-    @media (max-width: 480px){
-      .hero img {max-width:140px;}
-      .cta {font-size:1em;}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wintering Well | Limited Winter Edition - Cozy Mindfulness Guide</title>
+    <meta name="description" content="Embrace winter's quiet beauty with short readings, journal prompts & cozy recipes. A mindful guide for rest, reflection & slow living all season long.">
+    <meta name="keywords" content="winter mindfulness, cozy winter guide, seasonal self-care, hygge, slow living, winter reflection, mindful living">
+    <meta property="og:title" content="The Wintering Well - A Cozy Guide to Finding Joy in the Quiet Season">
+    <meta property="og:description" content="Short readings, gentle prompts, and warm recipes for a restful and reflective winter">
+    <meta property="og:image" content="https://i.postimg.cc/0NRQyj7G/Gemini-Generated-Image-e34a5ie34a5ie34a.png">
+    <meta property="og:type" content="book">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "name": "The Wintering Well",
+      "subtitle": "A Cozy Guide to Finding Joy in the Quiet Season",
+      "author": "A Friend",
+      "datePublished": "2025-10-15",
+      "genre": ["Self-Help","Mindfulness","Seasonal"],
+      "description": "A cozy guide of short readings, journal prompts, and warm recipes to embrace rest and reflection during winter.",
+      "bookFormat": "EBook",
+      "image": "https://i.postimg.cc/0NRQyj7G/Gemini-Generated-Image-e34a5ie34a5ie34a.png",
+      "offers": {
+        "@type": "Offer",
+        "price": "9.99",
+        "priceCurrency": "USD"
+      }
     }
-  </style>
+    </script>
+
+    <link rel="stylesheet" href="styles-enhanced.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <section class="hero">
-    <div class="urgent">🔥 472 sold this week • 40% off ends in <span id="timer">02:13:08</span></div>
-    <h1><span style="font-family: Playfair Display">The Wintering Well</span></h1>
-    <h2>Find Joy & Peace in the Season Everyone Dreads</h2>
-    <img src="https://i.postimg.cc/0NRQyj7G/Gemini-Generated-Image-e34a5ie34a5ie34a.png" alt="The Wintering Well cover illustration"/>
-    <p style="font-size:1.08em;"><strong>24 cozy chapters · 50+ short mindfulness practices · 15 soul-warming recipes · Personal reflection prompts</strong></p>
-    <a href="https://www.amazon.co.uk/dp/B0FXPZFFYC" class="cta" target="_blank" rel="noopener">Get the eBook on Amazon UK</a>
-    <br/>
-    <a href="https://www.amazon.co.uk/dp/B0FX3MFFSP" class="cta" style="background:#3b1e09" target="_blank" rel="noopener">Buy the Paperback (UK)</a>
-    <div style="margin:1em auto; color:#3b3b3b; opacity:.8;">
-      <em>Instant Kindle/eBook or print delivery via Amazon UK</em>
+    <!-- Snow Effect Container -->
+    <div id="snow-container"></div>
+
+    <!-- Sticky Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="announcement-content">
+            🎁 <strong>WINTER LAUNCH SPECIAL:</strong> Get 40% OFF + Free Bonus Workbook ($14.99 Value) - 
+            <span id="countdown-timer">Ends in: <span id="timer">00:00:00</span></span>
+            <a href="#get-book" class="announcement-cta">Claim Offer →</a>
+        </div>
     </div>
-  </section>
-  <section class="social-proof">
-    <div class="stars">★★★★★ 4.9/5 | 12,847+ Happy Readers | 96% Would Recommend</div>
-    <blockquote>"This book saved my winter sanity." – Sarah M., London, UK</blockquote>
-    <blockquote>"The recipes alone are worth the price!" – Lisa T., Vancouver</blockquote>
-    <blockquote>"I read one chapter every Sunday morning with my tea. It's become my favorite ritual." – Emma R., Portland, US</blockquote>
-    <div style="font-size:.96em; color:#4a6800; margin:.5em auto 0 auto;">Join the #WinteringWell community → 
-      <a href="#faq" style="color:#1167b1;font-weight:700">Why readers love it?</a></div>
-  </section>
-  <section class="benefits">
-    <h2>What's Inside:</h2>
-    <ul>
-      <li>24 bite-sized readings & meditations for calm, clarity, and comfort</li>
-      <li>50+ short mindfulness practices & journal prompts for each chapter</li>
-      <li>15+ soul-warming winter recipes (soups, drinks, feasts)</li>
-      <li>Bonus digital "Winter Reflection Journal" PDF included free</li>
-      <li>Designed for those who want to enjoy—not just survive—winter</li>
-    </ul>
-  </section>
-  <section class="bonus">
-    <h2 style="margin-top:0;">🎁 Order now & get these exclusive bonuses:</h2>
-    <ul>
-      <li><strong>Winter Reflection Journal PDF</strong> (value £9.99): 60 printable prompts for deeper clarity</li>
-      <li><strong>30-Day Mindfulness Calendar</strong> (value £6.99): New comfort practice for every day</li>
-      <li><strong>Recipe eBooklet</strong> (value £4.99): 10 hot winter drinks & dishes not in the main book</li>
-    </ul>
-    <div style="padding:1em;text-align:center;">
-      <strong>Total Bonus Value: £21.97—Free with your purchase today.</strong>
+
+    <!-- Navigation with Sticky CTA -->
+    <nav class="navbar" id="mainNav">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="snowflake-icon">❄</span> The Wintering Well
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contents">Contents</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#blog">Resources</a></li>
+            </ul>
+            <a href="#get-book" class="nav-cta-btn pulse">Get 40% OFF Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Enhanced CTAs -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="urgency-badge flash">
+                    🔥 <strong>472 copies</strong> sold in last 24 hours
+                </div>
+
+                <h1>The Wintering Well</h1>
+                <h2>Find Peace in the Season Everyone Else Dreads</h2>
+                <p class="hero-subtitle">24 cozy chapters • 50+ mindfulness exercises • 15 soul-warming recipes • Personal reflection journal prompts</p>
+
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">4.9/5</span>
+                        <span class="stat-label">★★★★★ Rating</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">12,847+</span>
+                        <span class="stat-label">Happy Readers</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">96%</span>
+                        <span class="stat-label">Would Recommend</span>
+                    </div>
+                </div>
+
+                <div class="cta-buttons">
+                    <a href="#get-book" class="btn-primary btn-large pulse-continuous">
+                        <span class="btn-icon">🎁</span>
+                        Get Your Copy Now - 40% OFF
+                        <span class="btn-subtext">Only $5.99 (Reg. $9.99)</span>
+                    </a>
+                    <a href="#free-guide" class="btn-secondary btn-large">
+                        <span class="btn-icon">✨</span>
+                        Get Free Sample Chapter
+                    </a>
+                </div>
+
+                <div class="trust-badges">
+                    <div class="trust-item">✓ Instant Digital Delivery</div>
+                    <div class="trust-item">✓ 30-Day Money-Back Guarantee</div>
+                    <div class="trust-item">✓ Read on Any Device</div>
+                </div>
+
+                <div class="social-proof-ticker">
+                    <div class="ticker-item">Sarah from UK just purchased ✨</div>
+                    <div class="ticker-item">Michael from Canada just purchased ✨</div>
+                    <div class="ticker-item">Emma from US just purchased ✨</div>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="book-3d-container">
+                    <img src="https://i.postimg.cc/0NRQyj7G/Gemini-Generated-Image-e34a5ie34a5ie34a.png" alt="The Wintering Well book cover" class="book-cover-3d">
+                    <div class="gift-badge">
+                        <div class="gift-icon">🎁</div>
+                        <div class="gift-text">FREE<br>BONUSES<br>INSIDE</div>
+                    </div>
+                </div>
+                <div class="bonus-stack">
+                    <div class="bonus-item">✓ Winter Reflection Journal PDF</div>
+                    <div class="bonus-item">✓ 30-Day Mindfulness Calendar</div>
+                    <div class="bonus-item">✓ Exclusive Recipe Collection</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Urgency Timer Section -->
+    <section class="urgency-section">
+        <div class="container">
+            <div class="urgency-box">
+                <div class="urgency-icon">⏰</div>
+                <div class="urgency-content">
+                    <h3>Limited Time Winter Launch Offer</h3>
+                    <p>This special pricing expires when the timer hits zero. After that, the price returns to $9.99 and bonuses are no longer included.</p>
+                    <div class="countdown-display">
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="hours">23</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="minutes">47</span>
+                            <span class="countdown-label">Minutes</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="seconds">32</span>
+                            <span class="countdown-label">Seconds</span>
+                        </div>
+                    </div>
+                    <a href="#get-book" class="btn-primary btn-large pulse">Lock In Your 40% Discount Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem-Agitate-Solution Section -->
+    <section class="pas-section">
+        <div class="container">
+            <h2>Are You Struggling to Find Peace During the Dark Months?</h2>
+            <div class="pas-grid">
+                <div class="problem-box">
+                    <div class="problem-icon">😔</div>
+                    <h3>The Problem</h3>
+                    <ul>
+                        <li>Winter feels heavy, draining, and endless</li>
+                        <li>You're pressured to stay productive when you just want to rest</li>
+                        <li>Dark mornings and long nights affect your mood</li>
+                        <li>You lack meaningful rituals to make winter enjoyable</li>
+                        <li>Self-care feels complicated, not comforting</li>
+                    </ul>
+                </div>
+
+                <div class="solution-box">
+                    <div class="solution-icon">✨</div>
+                    <h3>The Solution</h3>
+                    <ul>
+                        <li><strong>Embrace winter</strong> as a season of rest, not resistance</li>
+                        <li><strong>Simple daily practices</strong> that take 5-10 minutes</li>
+                        <li><strong>Science-backed mindfulness</strong> for seasonal wellness</li>
+                        <li><strong>Cozy rituals</strong> that actually fit your real life</li>
+                        <li><strong>Feel peaceful, grounded,</strong> and genuinely content</li>
+                    </ul>
+                    <a href="#get-book" class="btn-primary">Start Your Wintering Well Journey</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Contents with Interactive Accordion -->
+    <section id="contents" class="contents-detailed">
+        <div class="container">
+            <h2>What's Inside: 24 Chapters of Cozy Wisdom</h2>
+            <p class="section-subtitle">Click to explore each chapter and see exactly what you'll discover</p>
+
+            <div class="contents-accordion">
+                <div class="accordion-part">
+                    <div class="part-header" onclick="togglePart(this)">
+                        <h3>Part One: The Gentle Unfurling <span class="season-tag">(October & November)</span></h3>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="part-content">
+                        <div class="chapter-item">
+                            <strong>Chapter 1: Permission to Slow Down</strong>
+                            <p>Learn why slowing down isn't laziness—it's essential for well-being. Includes 3 permission-granting exercises.</p>
+                        </div>
+                        <div class="chapter-item">
+                            <strong>Chapter 2: The Beauty of Bare Branches</strong>
+                            <p>Find beauty in emptiness and simplicity. Plus: A guided visualization practice.</p>
+                        </div>
+                        <div class="chapter-item">
+                            <strong>Chapter 3: Gathering Light</strong>
+                            <p>Practical rituals for bringing warmth into darker days. Includes candle meditation guide.</p>
+                        </div>
+                        <div class="chapter-item">
+                            <strong>Chapter 4: The First Frost</strong>
+                            <p>Embrace seasonal change with grace. Features frost-watching mindfulness practice.</p>
+                        </div>
+                        <div class="chapter-item">
+                            <strong>Chapter 5: The Art of the Steaming Mug</strong>
+                            <p>Transform your morning beverage into a ritual. Includes 5 tea ceremony variations.</p>
+                        </div>
+                        <div class="chapter-item">
+                            <strong>Chapter 6: An Ode to Old Jumpers</strong>
+                            <p>Find comfort in cozy textures and familiar things. Plus: Comfort inventory exercise.</p>
+                        </div>
+                        <div class="chapter-item">
+                            <strong>Chapter 7: Listening to the Rain</strong>
+                            <p>Deep listening practices for rainy days. Includes rain meditation soundscape guide.</p>
+                        </div>
+                        <div class="chapter-item">
+                            <strong>Chapter 8: The Humble Magic of Soup</strong>
+                            <p>3 soul-warming soup recipes + mindful cooking practices.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-part">
+                    <div class="part-header" onclick="togglePart(this)">
+                        <h3>Part Two: The Heart of Winter <span class="season-tag">(December & January)</span></h3>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="part-content">
+                        <div class="chapter-item">
+                            <strong>Chapter 9: Navigating the Noise</strong>
+                            <p>Stay centered during holiday chaos. 4 practices for maintaining peace.</p>
+                        </div>
+                        <div class="chapter-item">
+                            <strong>Chapter 10: Creating Pockets of Peace</strong>
+                            <p>Build micro-sanctuaries in your daily life. Room-by-room peace guide included.</p>
+                        </div>
+                        <div class="chapter-item">
+                            <strong>Chapter 11: The Glow of a Single Candle</strong>
+                            <p>Candle gazing meditation for stress relief. Plus: Choosing the right candles.</p>
+                        </div>
+                        <div class="chapter-item">
+                            <strong>Chapter 12: A Different Kind of Celebration</strong>
+                            <p>Redefine holidays on your terms. Alternative celebration ideas included.</p>
+                        </div>
+                        <div class="chapter-item">
+                            <strong>Chapter 13: The Gift of a Quiet Morning</strong>
+                            <p>Sacred morning routine template. 6 variations for different schedules.</p>
+                        </div>
+                        <div class="chapter-item">
+                            <strong>Chapter 14: Letting Go, Like Falling Snow</strong>
+                            <p>Release practices for the new year. Includes letting-go ceremony script.</p>
+                        </div>
+                        <div class="chapter-item">
+                            <strong>Chapter 15: Finding Stars in the Dark</strong>
+                            <p>Hope practices for the darkest days. Night sky meditation guide.</p>
+                        </div>
+                        <div class="chapter-item">
+                            <strong>Chapter 16: The Comfort of Carbs</strong>
+                            <p>5 comforting winter recipes: breads, porridges, and warming dishes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-part">
+                    <div class="part-header" onclick="togglePart(this)">
+                        <h3>Part Three: The Slow Awakening <span class="season-tag">(February & March)</span></h3>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="part-content">
+                        <div class="chapter-item">
+                            <strong>Chapter 17: Noticing the Small Shifts</strong>
+                            <p>Awareness practices for early spring signs. Nature observation journal prompts.</p>
+                        </div>
+                        <div class="chapter-item">
+                            <strong>Chapter 18: The Promise in the Pantry</strong>
+                            <p>Late winter cooking with what you have. 4 pantry-based recipes.</p>
+                        </div>
+                        <div class="chapter-item">
+                            <strong>Chapter 19: A Splash of Colour</strong>
+                            <p>Brighten late winter with color therapy. Room refresh guide included.</p>
+                        </div>
+                        <div class="chapter-item">
+                            <strong>Chapter 20: The Patience of a Seed</strong>
+                            <p>Indoor gardening as meditation. Includes seed-starting guide.</p>
+                        </div>
+                        <div class="chapter-item">
+                            <strong>Chapter 21: When the Wind Still Bites</strong>
+                            <p>Staying cozy through late-winter cold snaps. Wind meditation practice.</p>
+                        </div>
+                        <div class="chapter-item">
+                            <strong>Chapter 22: Planning a Gentle Spring</strong>
+                            <p>Intention-setting without pressure. Gentle goal-setting worksheets.</p>
+                        </div>
+                        <div class="chapter-item">
+                            <strong>Chapter 23: The Warmth of a Shared Story</strong>
+                            <p>Connection practices for late winter. Includes storytelling prompts.</p>
+                        </div>
+                        <div class="chapter-item">
+                            <strong>Chapter 24: A Final, Gentle Farewell</strong>
+                            <p>Closing rituals to honor your winter. Transition ceremony guide.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contents-cta">
+                <h3>Get All 24 Chapters + Bonuses Today</h3>
+                <p>Regular Price: <span class="strike-price">$9.99</span> | Today Only: <strong class="sale-price">$5.99</strong></p>
+                <a href="#get-book" class="btn-primary btn-large">Claim Your 40% Discount Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Reviews Section -->
+    <section id="reviews" class="reviews-section">
+        <div class="container">
+            <h2>What Readers Are Saying</h2>
+            <p class="section-subtitle">Join 12,847+ people who've transformed their winter experience</p>
+
+            <div class="reviews-grid">
+                <div class="review-card featured">
+                    <div class="review-stars">★★★★★</div>
+                    <h4>"This book saved my winter sanity"</h4>
+                    <p>"I used to dread November through March. This year, for the first time in my life, I actually looked forward to winter. The daily practices are so simple but genuinely life-changing. The soup recipes alone are worth the price!"</p>
+                    <div class="reviewer">
+                        <strong>Sarah M.</strong> • London, UK • Verified Purchase
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <h4>"Better than therapy for seasonal blues"</h4>
+                    <p>"My therapist recommended mindfulness for my winter depression. This book made it actually doable. The short chapters fit my attention span, and the journal prompts helped me work through feelings I didn't know I had."</p>
+                    <div class="reviewer">
+                        <strong>Michael K.</strong> • Toronto, Canada
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <h4>"A gift I keep giving"</h4>
+                    <p>"I bought this for myself, then bought 6 more copies for friends and family. Everyone loves it. It's become our group's winter survival guide. We even have a book club discussing each chapter."</p>
+                    <div class="reviewer">
+                        <strong>Emma R.</strong> • Portland, US
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <h4>"Hygge meets mindfulness"</h4>
+                    <p>"I've read dozens of self-help books. This one is different. It doesn't demand anything from you—it just offers comfort. The recipes are delicious, the writing is beautiful, and I reference it constantly."</p>
+                    <div class="reviewer">
+                        <strong>James L.</strong> • Edinburgh, UK
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <h4>"My new winter tradition"</h4>
+                    <p>"I read one chapter every Sunday morning with my tea. It's become my favorite ritual. The book helps me slow down and actually enjoy winter instead of just surviving it. Highly recommend!"</p>
+                    <div class="reviewer">
+                        <strong>Lisa T.</strong> • Vancouver, Canada
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <h4>"Exactly what I needed"</h4>
+                    <p>"The timing of this book was perfect. I was feeling overwhelmed by holiday pressure and winter darkness. This gave me permission to rest and tools to actually do it. The mindfulness exercises are brilliant."</p>
+                    <div class="reviewer">
+                        <strong>Rachel P.</strong> • Boston, US
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-stats">
+                <div class="stat-box">
+                    <div class="stat-big">4.9/5</div>
+                    <div class="stat-label">Average Rating</div>
+                    <div class="stat-stars">★★★★★</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-big">12,847+</div>
+                    <div class="stat-label">Copies Sold</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-big">96%</div>
+                    <div class="stat-label">Would Recommend</div>
+                </div>
+            </div>
+
+            <a href="#get-book" class="btn-primary btn-large">Join These Happy Readers Today</a>
+        </div>
+    </section>
+
+    <!-- Bonus Stack Section -->
+    <section class="bonus-section">
+        <div class="container">
+            <h2>🎁 Get These FREE Bonuses (Worth $44.97)</h2>
+            <p class="section-subtitle">When you order today, you'll also receive these exclusive gifts</p>
+
+            <div class="bonus-grid">
+                <div class="bonus-card">
+                    <div class="bonus-image-placeholder">
+                        <div class="gift-box-icon">🎁</div>
+                    </div>
+                    <h3>Bonus #1: Winter Reflection Journal</h3>
+                    <p class="bonus-value">Value: $14.99</p>
+                    <p>60-page guided journal with prompts for every chapter. Track your progress and deepen your practice throughout the season.</p>
+                </div>
+
+                <div class="bonus-card">
+                    <div class="bonus-image-placeholder">
+                        <div class="gift-box-icon">📅</div>
+                    </div>
+                    <h3>Bonus #2: 30-Day Mindfulness Calendar</h3>
+                    <p class="bonus-value">Value: $12.99</p>
+                    <p>Printable calendar with daily 5-minute practices. Never wonder what to do each day—we've planned it for you.</p>
+                </div>
+
+                <div class="bonus-card">
+                    <div class="bonus-image-placeholder">
+                        <div class="gift-box-icon">🍲</div>
+                    </div>
+                    <h3>Bonus #3: Extended Recipe Collection</h3>
+                    <p class="bonus-value">Value: $9.99</p>
+                    <p>15 additional cozy recipes not in the main book. Soups, breads, warm drinks, and comfort foods.</p>
+                </div>
+
+                <div class="bonus-card">
+                    <div class="bonus-image-placeholder">
+                        <div class="gift-box-icon">🎧</div>
+                    </div>
+                    <h3>Bonus #4: Guided Meditation Audio</h3>
+                    <p class="bonus-value">Value: $7.00</p>
+                    <p>5 downloadable meditation tracks narrated specifically for The Wintering Well practices.</p>
+                </div>
+            </div>
+
+            <div class="total-value">
+                <h3>Total Bonus Value: <span class="strike-price">$44.97</span></h3>
+                <h2>Yours FREE Today!</h2>
+            </div>
+
+            <a href="#get-book" class="btn-primary btn-large pulse-continuous">Get The Book + All 4 Bonuses Now</a>
+        </div>
+    </section>
+
+    <!-- Main Purchase Section -->
+    <section id="get-book" class="purchase-main">
+        <div class="container">
+            <div class="purchase-hero">
+                <h2>Start Your Peaceful Winter Journey Today</h2>
+                <p class="purchase-subtitle">Choose your format and get instant access + all bonuses</p>
+            </div>
+
+            <div class="purchase-grid">
+                <div class="purchase-option recommended">
+                    <div class="recommended-badge">🏆 MOST POPULAR</div>
+                    <h3>Complete Bundle</h3>
+                    <div class="price-display">
+                        <span class="original-price">$36.97</span>
+                        <span class="sale-price-big">$14.99</span>
+                        <span class="savings-badge">SAVE 59%</span>
+                    </div>
+                    <ul class="includes-list">
+                        <li>✅ eBook (PDF, ePub, Mobi)</li>
+                        <li>✅ Audiobook (MP3)</li>
+                        <li>✅ Printable Paperback PDF</li>
+                        <li>✅ ALL 4 Bonus Gifts ($44.97 value)</li>
+                        <li>✅ Lifetime Access & Updates</li>
+                        <li>✅ Read on Any Device</li>
+                        <li>✅ 30-Day Money-Back Guarantee</li>
+                    </ul>
+                    <a href="#" class="btn-buy btn-bundle pulse-continuous">
+                        Get Complete Bundle Now
+                        <span class="btn-subtext">Instant Digital Delivery</span>
+                    </a>
+                </div>
+
+                <div class="purchase-option">
+                    <h3>eBook Only</h3>
+                    <div class="price-display">
+                        <span class="original-price">$9.99</span>
+                        <span class="sale-price-big">$5.99</span>
+                        <span class="savings-badge">SAVE 40%</span>
+                    </div>
+                    <ul class="includes-list">
+                        <li>✅ eBook (PDF, ePub, Mobi)</li>
+                        <li>✅ Bonus #1: Reflection Journal</li>
+                        <li>✅ Bonus #2: 30-Day Calendar</li>
+                        <li>✅ Read on Any Device</li>
+                        <li>✅ Instant Download</li>
+                        <li>✅ 30-Day Money-Back Guarantee</li>
+                    </ul>
+                    <a href="#" class="btn-buy">
+                        Get eBook Now
+                        <span class="btn-subtext">Instant Digital Delivery</span>
+                    </a>
+                </div>
+
+                <div class="purchase-option">
+                    <h3>Paperback</h3>
+                    <div class="price-display">
+                        <span class="original-price">$24.99</span>
+                        <span class="sale-price-big">$16.99</span>
+                        <span class="savings-badge">SAVE 32%</span>
+                    </div>
+                    <ul class="includes-list">
+                        <li>✅ Physical Paperback Book</li>
+                        <li>✅ Beautiful Matte Finish Cover</li>
+                        <li>✅ Premium Cream Pages</li>
+                        <li>✅ Free Shipping Over $25</li>
+                        <li>✅ Perfect Gift Option</li>
+                        <li>✅ 30-Day Money-Back Guarantee</li>
+                    </ul>
+                    <a href="#" class="btn-buy">
+                        Order Paperback
+                        <span class="btn-subtext">Ships Within 24 Hours</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="store-links">
+                <p class="store-label">Also available on:</p>
+                <div class="store-buttons">
+                    <a href="#" class="store-btn amazon">📚 Amazon Kindle</a>
+                    <a href="#" class="store-btn apple">🍎 Apple Books</a>
+                    <a href="#" class="store-btn kobo">📖 Kobo</a>
+                    <a href="#" class="store-btn audible">🎧 Audible</a>
+                    <a href="#" class="store-btn google">📱 Google Play</a>
+                </div>
+            </div>
+
+            <div class="guarantee-box">
+                <div class="guarantee-icon">🛡️</div>
+                <div class="guarantee-content">
+                    <h3>100% Satisfaction Guarantee</h3>
+                    <p>Try The Wintering Well for 30 days. If you don't find peace, comfort, and genuine value in these pages, simply email us and we'll refund every penny. No questions asked.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>When will I receive the book?</h3>
+                    <p>Instantly! For digital formats, you'll receive download links immediately after purchase. Paperbacks ship within 24 hours.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What devices can I read it on?</h3>
+                    <p>All of them! We provide PDF (any device), ePub (Apple, Kobo), and Mobi (Kindle) formats. Read on your phone, tablet, e-reader, or computer.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Is this just another mindfulness book?</h3>
+                    <p>No. This is specifically designed for winter's unique challenges. It combines mindfulness, hygge, seasonal recipes, and practical comfort—not generic advice.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How long will this discount last?</h3>
+                    <p>This winter launch special ends when the countdown timer hits zero. After that, prices return to normal and bonuses are removed.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Do I need winter to use this book?</h3>
+                    <p>While designed for winter, readers in the Southern Hemisphere use it during their cold months (June-August). The practices work year-round for anyone seeking rest and reflection.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What if I don't like it?</h3>
+                    <p>We offer a 30-day money-back guarantee. Just email us and we'll refund you in full, no questions asked.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="final-cta-content">
+                <h2>This Winter Can Be Different</h2>
+                <p>Imagine waking up on a cold, dark morning and actually feeling peaceful. Imagine having rituals that bring you comfort instead of stress. Imagine embracing winter instead of dreading it.</p>
+
+                <p><strong>That's exactly what The Wintering Well offers you.</strong></p>
+
+                <div class="final-offer-box">
+                    <div class="offer-column">
+                        <h3>You Get:</h3>
+                        <ul>
+                            <li>✅ The Wintering Well (24 chapters)</li>
+                            <li>✅ 50+ mindfulness exercises</li>
+                            <li>✅ 15 cozy recipes</li>
+                            <li>✅ Personal journal prompts</li>
+                            <li>✅ 4 FREE bonus gifts ($44.97 value)</li>
+                            <li>✅ Lifetime access & updates</li>
+                            <li>✅ 30-day money-back guarantee</li>
+                        </ul>
+                    </div>
+
+                    <div class="offer-column">
+                        <div class="final-price-box">
+                            <div class="final-price-label">Regular Price:</div>
+                            <div class="final-price-strike">$54.96</div>
+                            <div class="final-price-label">Today Only:</div>
+                            <div class="final-price-main">$5.99</div>
+                            <div class="final-savings">You Save $48.97 (89%)</div>
+
+                            <div class="urgency-text">
+                                ⏰ Offer expires in: <span id="final-timer">23:47:18</span>
+                            </div>
+
+                            <a href="#get-book" class="btn-primary btn-huge pulse-continuous">
+                                Yes! Give Me The Wintering Well Now
+                            </a>
+
+                            <div class="secure-checkout">
+                                🔒 Secure Checkout • Instant Access
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>The Wintering Well</h3>
+                    <p>A cozy companion for finding joy in the quiet season. May these words be a soft place for you to land.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#">Free Sample</a></li>
+                        <li><a href="#">Newsletter</a></li>
+                        <li><a href="#">Gift Guide</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Email Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Wintering Well. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Exit Intent Popup -->
+    <div id="exit-popup" class="exit-popup">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closePopup()">&times;</button>
+            <h2>⏰ Wait! Your Discount Is About To Expire</h2>
+            <p>Don't miss out on 40% OFF + FREE bonuses!</p>
+
+            <div class="popup-offer">
+                <div class="popup-timer">
+                    Time left: <span id="popup-timer">05:00</span>
+                </div>
+                <div class="popup-price">
+                    Only <span class="popup-price-big">$5.99</span>
+                    <span class="popup-regular">(Reg. $9.99)</span>
+                </div>
+                <a href="#get-book" class="btn-primary btn-large" onclick="closePopup()">
+                    Claim My Discount Now
+                </a>
+            </div>
+        </div>
     </div>
-  </section>
-  <section class="guarantee">
-    <h2>100% Calm Comfort Guarantee</h2>
-    <p>Try The Wintering Well risk-free for 30 days. Not cozy enough? Didn’t feel the mindset shift? We’ll refund every penny with zero questions.</p>
-  </section>
-  <section id="faq" class="faq">
-    <h2>FAQ: Everything You Need to Know</h2>
-    <ul>
-      <li><strong>How do I get my eBook?</strong> – Click the blue “eBook” button, buy on Amazon, and download instantly to Kindle, phone, tablet, or computer.</li>
-      <li><strong>And the paperback?</strong> – Click the brown “Paperback” button, buy on Amazon, and it ships across the UK within 48 hours.</li>
-      <li><strong>Are the bonuses included?</strong> – Yes! Just email your Amazon order number (instructions inside the book) and we’ll send bonuses.</li>
-      <li><strong>What if it doesn’t help?</strong> – Email us within 30 days for a full refund. No hoops or questions.</li>
-      <li><strong>Can I read on Kindle app/phone?</strong> – Yes, Kindle and free Kindle app both work instantly. </li>
-    </ul>
-  </section>
-  <footer class="footer">
-    <div style="padding:2em 8px 2em 8px;text-align:center;max-width:690px;margin:0 auto;opacity:.72">
-      <div>The Wintering Well © 2025 • Made for cozy, mindful winters.<br>
-      <a href="mailto:hello@winteringwell.com">hello@winteringwell.com</a> • <a href="#faq">FAQ</a> • Privacy • Refunds
-      </div>
+
+    <!-- Floating CTA Button -->
+    <div class="floating-cta" id="floatingCta">
+        <div class="floating-cta-content">
+            <span class="floating-cta-text">40% OFF + Free Bonuses</span>
+            <a href="#get-book" class="floating-cta-btn">Get Yours Now →</a>
+        </div>
     </div>
-  </footer>
-  <script>
-    // Simple countdown (expires in 2:13:08 after pageload)
-    const timer = document.getElementById('timer');
-    let time = 2*3600+13*60+8; setInterval(function(){
-      let h=Math.floor(time/3600), m=Math.floor((time%3600)/60), s=time%60;
-      timer.textContent=[h,m,s].map(x=>String(x).padStart(2,'0')).join(':'); if(time>0)time--;},1000);
-  </script>
+
+    <script src="script-enhanced.js"></script>
 </body>
 </html>
