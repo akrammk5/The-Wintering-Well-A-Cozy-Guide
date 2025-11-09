@@ -31,7 +31,7 @@
         "price": "5.99",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
-        "url": "https://www.amazon.co.uk/dp/B0FXPZFFYC"
+        "url": "#get-book"
       },
       "aggregateRating": {
         "@type": "AggregateRating",
@@ -55,144 +55,6 @@
             color: inherit;
             display: block;
         }
-        .store-buttons {
-            justify-content: center;
-            gap: 15px; 
-        }
-
-        /* --- STYLES FOR NEW TRUST FEATURES --- */
-
-        /* 1. As Featured In Bar */
-        .featured-in {
-            background: #f8f9fa; /* Light, subtle background */
-            padding: 20px 0;
-            text-align: center;
-            border-top: 1px solid #eee;
-            border-bottom: 1px solid #eee;
-        }
-        .featured-in-container {
-            max-width: 960px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: wrap; /* For mobile */
-        }
-        .featured-in-title {
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            color: #888;
-            margin-bottom: 15px;
-            width: 100%;
-        }
-        .logo-placeholder {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: #aaa;
-            padding: 10px 20px;
-        }
-
-        /* 2. Author Bio Section */
-        .about-author {
-            background: #fff;
-            padding: 80px 0;
-            border-top: 1px solid #f0f0f0;
-        }
-        .about-author-container {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .author-image {
-            flex-shrink: 0;
-        }
-        .author-image img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #e0e8f0;
-        }
-        .author-bio h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-        .author-bio p {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: #333;
-        }
-        .author-bio .author-signature {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #111;
-            margin-top: 20px;
-        }
-
-        /* 3. Secure Payment Logos */
-        .secure-checkout-logos {
-            text-align: center;
-            margin-top: 30px;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border: 1px solid #eee;
-        }
-        .secure-checkout-logos p {
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: #333;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        .secure-checkout-logos span {
-            font-size: 1.5rem;
-        }
-
-        /* 4. Enhanced Guarantee Box */
-        .guarantee-box-enhanced {
-            margin-top: 30px;
-            border: 2px dashed #006400; /* Dark green dashed border */
-            border-radius: 8px;
-            background: #f4fbf4; /* Very light green */
-            padding: 25px;
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-        .guarantee-seal {
-            font-size: 4rem;
-            color: #006400;
-            flex-shrink: 0;
-        }
-        .guarantee-content-enhanced h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: #006400;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-        .guarantee-content-enhanced p {
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #333;
-            margin: 0;
-        }
-
     </style>
 </head>
 <body>
@@ -202,7 +64,7 @@
         <div class="announcement-content">
             🎁 <strong>WINTER LAUNCH SPECIAL:</strong> Get 40% OFF + Free Bonus Workbook ($14.99 Value) - 
             <span id="countdown-timer">Ends in: <span id="timer">00:00:00</span></span>
-            <a href="https://www.amazon.co.uk/dp/B0FXPZFFYC" target="_blank" rel="noopener noreferrer" class="announcement-cta">Claim Offer →</a>
+            <a href="#get-book" class="announcement-cta">Claim Offer →</a>
         </div>
     </div>
 
@@ -218,7 +80,7 @@
                 <li><a href="#reviews">Reviews</a></li>
                 <li><a href="#blog">Resources</a></li>
             </ul>
-            <a href="https://www.amazon.co.uk/dp/B0FXPZFFYC" target="_blank" rel="noopener noreferrer" class="nav-cta-btn pulse">Get 40% OFF Now</a>
+            <a href="#get-book" class="nav-cta-btn pulse">Get 40% OFF Now</a>
         </div>
     </nav>
 
@@ -249,10 +111,14 @@
                 </div>
 
                 <div class="cta-buttons">
-                    <a href="https://www.amazon.co.uk/dp/B0FXPZFFYC" target="_blank" rel="noopener noreferrer" class="btn-primary btn-large pulse-continuous">
+                    <a href="#get-book" class="btn-primary btn-large pulse-continuous">
                         <span class="btn-icon">🎁</span>
                         Get Your Copy Now - 40% OFF
                         <span class="btn-subtext">Only $5.99 (Reg. $9.99)</span>
+                    </a>
+                    <a href="#free-guide" class="btn-secondary btn-large">
+                        <span class="btn-icon">✨</span>
+                        Get Free Sample Chapter
                     </a>
                 </div>
 
@@ -260,7 +126,6 @@
                     <div class="trust-item">✓ Instant Digital Delivery</div>
                     <div class="trust-item">✓ 30-Day Money-Back Guarantee</div>
                     <div class="trust-item">✓ Read on Any Device</div>
-                    <div class="trust-item">✓ Secure Amazon Checkout</div>
                 </div>
 
                 <div class="social-proof-ticker">
@@ -271,7 +136,7 @@
             </div>
 
             <div class="hero-image">
-                <a href="https://www.amazon.co.uk/dp/B0FXPZFFYC" target="_blank" rel="noopener noreferrer" class="hero-image-link" aria-label="Get The Wintering Well">
+                <a href="#get-book" class="hero-image-link" aria-label="Get The Wintering Well">
                     <div class="book-3d-container">
                         <img src="https://i.postimg.cc/0NRQyj7G/Gemini-Generated-Image-e34a5ie34a5ie34a.png" alt="The Wintering Well book cover" class="book-cover-3d">
                         <div class="gift-badge">
@@ -286,16 +151,6 @@
                     </div>
                 </a>
             </div>
-        </div>
-    </section>
-
-    <section class="featured-in">
-        <div class="featured-in-container">
-            <h3 class="featured-in-title">As Featured In</h3>
-            <div class="logo-placeholder">Cozy Living</div>
-            <div class="logo-placeholder">Mindful.org</div>
-            <div class="logo-placeholder">The Wellness Podcast</div>
-            <div class="logo-placeholder">Hygge Home Blog</div>
         </div>
     </section>
 
@@ -320,66 +175,177 @@
                             <span class="countdown-label">Seconds</span>
                         </div>
                     </div>
-                    <a href="https://www.amazon.co.uk/dp/B0FXPZFFYC" target="_blank" rel="noopener noreferrer" class="btn-primary btn-large pulse">Lock In Your 40% Discount Now</a>
+                    <a href="#get-book" class="btn-primary btn-large pulse">Lock In Your 40% Discount Now</a>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="pas-section">
-        </section>
+        <div class="container">
+            <h2>Are You Struggling to Find Peace During the Dark Months?</h2>
+            <div class="pas-grid">
+                <div class="problem-box">
+                    <div class="problem-icon">😔</div>
+                    <h3>The Problem</h3>
+                    <ul>
+                        <li>Winter feels heavy, draining, and endless</li>
+                        <li>You're pressured to stay productive when you just want to rest</li>
+                        <li>Dark mornings and long nights affect your mood</li>
+                        <li>You lack meaningful rituals to make winter enjoyable</li>
+                        <li>Self-care feels complicated, not comforting</li>
+                    </ul>
+                </div>
 
-    <section id="about" class="about-author">
-        <div class="about-author-container">
-            <div class="author-image">
-                <img src="https://i.postimg.cc/tJ0G9Ff4/author-placeholder.png" alt="[Your Author Name]">
-            </div>
-            <div class="author-bio">
-                <h3>A Note From the Author</h3>
-                <p>"I created 'The Wintering Well' because I used to dread winter. I felt sluggish, sad, and disconnected. Instead of fighting the season, I learned to embrace its call for rest and reflection. This book isn't a list of chores; it's a hand-drawn map to finding peace in the quiet."</p>
-                <p>My hope is that these pages feel like a warm blanket and a good cup of tea, guiding you to a cozier, more mindful season.</p>
-                <p class="author-signature">Warmly, [Your Author Name]</p>
+                <div class="solution-box">
+                    <div class="solution-icon">✨</div>
+                    <h3>The Solution</h3>
+                    <ul>
+                        <li><strong>Embrace winter</strong> as a season of rest, not resistance</li>
+                        <li><strong>Simple daily practices</strong> that take 5-10 minutes</li>
+                        <li><strong>Science-backed mindfulness</strong> for seasonal wellness</li>
+                        <li><strong>Cozy rituals</strong> that actually fit your real life</li>
+                        <li><strong>Feel peaceful, grounded,</strong> and genuinely content</li>
+                    </ul>
+                    <a href="#get-book" class="btn-primary">Start Your Wintering Well Journey</a>
+                </div>
             </div>
         </div>
     </section>
 
-
     <section id="contents" class="contents-detailed">
-        </section>
+        <div class="container">
+            <h2>What's Inside: 24 Chapters of Cozy Wisdom</h2>
+            <p class="section-subtitle">Click to explore each chapter and see exactly what you'll discover</p>
+
+            <div class="contents-accordion">
+                </div>
+
+            <div class="contents-cta">
+                <h3>Get All 24 Chapters + Bonuses Today</h3>
+                <p>Regular Price: <span class="strike-price">$9.99</span> | Today Only: <strong class="sale-price">$5.99</strong></p>
+                <a href="#get-book" class="btn-primary btn-large">Claim Your 40% Discount Now</a>
+            </div>
+        </div>
+    </section>
 
     <section id="reviews" class="reviews-section">
-        </section>
+        <div class="container">
+            <h2>What Readers Are Saying</h2>
+            <a href="#get-book" class="btn-primary btn-large">Join These Happy Readers Today</a>
+        </div>
+    </section>
 
     <section class="bonus-section">
-        </section>
+        <div class="container">
+            <h2>🎁 Get These FREE Bonuses (Worth $44.97)</h2>
+            <p class="section-subtitle">When you order today, you'll also receive these exclusive gifts</p>
+
+            <div class="bonus-grid">
+                
+                <a href="#get-book" class="bonus-card-link" aria-label="Get Bonus 1">
+                    <div class="bonus-card">
+                        <div class="bonus-image-placeholder">
+                            <div class="gift-box-icon">🎁</div>
+                        </div>
+                        <h3>Bonus #1: Winter Reflection Journal</h3>
+                        <p class="bonus-value">Value: $14.99</p>
+                        <p>60-page guided journal with prompts for every chapter. Track your progress and deepen your practice throughout the season.</p>
+                    </div>
+                </a>
+
+                <a href="#get-book" class="bonus-card-link" aria-label="Get Bonus 2">
+                    <div class="bonus-card">
+                        <div class="bonus-image-placeholder">
+                            <div class="gift-box-icon">📅</div>
+                        </div>
+                        <h3>Bonus #2: 30-Day Mindfulness Calendar</h3>
+                        <p class="bonus-value">Value: $12.99</p>
+                        <p>Printable calendar with daily 5-minute practices. Never wonder what to do each day—we've planned it for you.</p>
+                    </div>
+                </a>
+
+                <a href="#get-book" class="bonus-card-link" aria-label="Get Bonus 3">
+                    <div class="bonus-card">
+                        <div class="bonus-image-placeholder">
+                            <div class="gift-box-icon">🍲</div>
+                        </div>
+                        <h3>Bonus #3: Extended Recipe Collection</h3>
+                        <p class="bonus-value">Value: $9.99</p>
+                        <p>15 additional cozy recipes not in the main book. Soups, breads, warm drinks, and comfort foods.</p>
+                    </div>
+                </a>
+
+                <a href="#get-book" class="bonus-card-link" aria-label="Get Bonus 4">
+                    <div class="bonus-card">
+                        <div class="bonus-image-placeholder">
+                            <div class="gift-box-icon">🎧</div>
+                        </div>
+                        <h3>Bonus #4: Guided Meditation Audio</h3>
+                        <p class="bonus-value">Value: $7.00</p>
+                        <p>5 downloadable meditation tracks narrated specifically for The Wintering Well practices.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="total-value">
+                <h3>Total Bonus Value: <span class="strike-price">$44.97</span></h3>
+                <h2>Yours FREE Today!</h2>
+            </div>
+
+            <a href="#get-book" class="btn-primary btn-large pulse-continuous">Get The Book + All 4 Bonuses Now</a>
+        </div>
+    </section>
 
     <section id="get-book" class="purchase-main">
         <div class="container">
             <div class="purchase-hero">
                 <h2>Start Your Peaceful Winter Journey Today</h2>
-                <p class="purchase-subtitle">Get your copy instantly on Amazon Kindle or order the Paperback</p>
+                <p class="purchase-subtitle">Choose your format and get instant access + all bonuses</p>
             </div>
 
             <div class="purchase-grid">
                 <div class="purchase-option recommended">
                     <div class="recommended-badge">🏆 MOST POPULAR</div>
-                    <h3>eBook (Kindle)</h3>
+                    <h3>Complete Bundle</h3>
+                    <div class="price-display">
+                        <span class="original-price">$36.97</span>
+                        <span class="sale-price-big">$14.99</span>
+                        <span class="savings-badge">SAVE 59%</span>
+                    </div>
+                    <ul class="includes-list">
+                        <li>✅ eBook (PDF, ePub, Mobi)</li>
+                        <li>✅ Audiobook (MP3)</li>
+                        <li>✅ Printable Paperback PDF</li>
+                        <li>✅ ALL 4 Bonus Gifts ($44.97 value)</li>
+                        <li>✅ Lifetime Access & Updates</li>
+                        <li>✅ Read on Any Device</li>
+                        <li>✅ 30-Day Money-Back Guarantee</li>
+                    </ul>
+                    <a href="#" class="btn-buy btn-bundle pulse-continuous">
+                        Get Complete Bundle Now
+                        <span class="btn-subtext">Instant Digital Delivery</span>
+                    </a>
+                </div>
+
+                <div class="purchase-option">
+                    <h3>eBook Only</h3>
                     <div class="price-display">
                         <span class="original-price">$9.99</span>
                         <span class="sale-price-big">$5.99</span>
                         <span class="savings-badge">SAVE 40%</span>
                     </div>
                     <ul class="includes-list">
-                        <li>✅ Instant Kindle Delivery</li>
+                        <li>✅ eBook (PDF, ePub, Mobi)</li>
                         <li>✅ Bonus #1: Reflection Journal</li>
                         <li>✅ Bonus #2: 30-Day Calendar</li>
-                        <li>✅ Read on any device (Kindle App)</li>
-                        <li>✅ All 4 Bonuses Included</li>
+                        <li>✅ Read on Any Device</li>
+                        <li>✅ Instant Download</li>
                         <li>✅ 30-Day Money-Back Guarantee</li>
                     </ul>
                     <a href="https://www.amazon.co.uk/dp/B0FXPZFFYC" class="btn-buy" target="_blank" rel="noopener noreferrer">
-                        Get Kindle eBook Now
-                        <span class="btn-subtext">Buy on Amazon</span>
+                        Get eBook Now
+                        <span class="btn-subtext">Available on Amazon</span>
                     </a>
                 </div>
 
@@ -394,38 +360,37 @@
                         <li>✅ Physical Paperback Book</li>
                         <li>✅ Beautiful Matte Finish Cover</li>
                         <li>✅ Premium Cream Pages</li>
-                        <li>✅ All 4 Bonuses Included</li>
+                        <li>✅ Free Shipping Over $25</li>
                         <li>✅ Perfect Gift Option</li>
                         <li>✅ 30-Day Money-Back Guarantee</li>
                     </ul>
                     <a href="https://www.amazon.co.uk/dp/B0FX3MFFSP" class="btn-buy" target="_blank" rel="noopener noreferrer">
                         Order Paperback
-                        <span class="btn-subtext">Buy on Amazon</span>
+                        <span class="btn-subtext">Available on Amazon</span>
                     </a>
                 </div>
             </div>
 
             <div class="store-links">
-                <p class="store-label">Available exclusively on Amazon</p>
+                <p class="store-label">Also available on:</p>
                 <div class="store-buttons">
                     <a href="https://www.amazon.co.uk/dp/B0FXPZFFYC" class="store-btn amazon" target="_blank" rel="noopener noreferrer">📚 Amazon Kindle</a>
                     <a href="https://www.amazon.co.uk/dp/B0FX3MFFSP" class="store-btn amazon" target="_blank" rel="noopener noreferrer">📦 Amazon Paperback</a>
+                    <a href="https://www.amazon.co.uk/dp/B0FXPZFFYC" class="store-btn amazon" target="_blank" rel="noopener noreferrer">🍎 Apple Books</a>
+                    <a href="https://www.amazon.co.uk/dp/B0FXPZFFYC" class="store-btn amazon" target="_blank" rel="noopener noreferrer">📖 Kobo</a>
+                    <a href="https://www.amazon.co.uk/dp/B0FXPZFFYC" class="store-btn amazon" target="_blank" rel="noopener noreferrer">🎧 Audible</a>
+                    <a href="https://www.amazon.co.uk/dp/B0FXPZFFYC" class="store-btn amazon" target="_blank" rel="noopener noreferrer">📱 Google Play</a>
                 </div>
             </div>
 
-            <div class="secure-checkout-logos">
-                <p><span>🔒</span> Secure Checkout with <strong>Amazon Pay</strong></p>
-            </div>
-
-            <div class="guarantee-box-enhanced">
-                <div class="guarantee-seal">🏅</div>
-                <div class="guarantee-content-enhanced">
-                    <h3>Our "Warm & Cozy" 30-Day Guarantee</h3>
-                    <p>Try The Wintering Well for 30 days. If this book and the free bonuses don't help you find more peace and comfort this winter, simply email us for a full refund. No questions asked.</p>
+            <div class="guarantee-box">
+                <div class="guarantee-icon">🛡️</div>
+                <div class="guarantee-content">
+                    <h3>100% Satisfaction Guarantee</h3>
+                    <p>Try The Wintering Well for 30 days. If you don't find peace, comfort, and genuine value in these pages, simply email us and we'll refund every penny. No questions asked.</p>
                 </div>
             </div>
-
-            </div>
+        </div>
     </section>
 
     <section class="faq-section">
