@@ -3,411 +3,688 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Wintering Well | Limited Winter Edition - Cozy Mindfulness Guide</title>
-    <meta name="description" content="Embrace winter's quiet beauty with short readings, journal prompts & cozy recipes. A mindful guide for rest, reflection & slow living all season long.">
-    <meta name="keywords" content="winter mindfulness, cozy winter guide, seasonal self-care, hygge, slow living, winter reflection, mindful living">
-    <meta property="og:title" content="The Wintering Well - A Cozy Guide to Finding Joy in the Quiet Season">
-    <meta property="og:description" content="Short readings, gentle prompts, and warm recipes for a restful and reflective winter">
-    <meta property="og:image" content="https://i.postimg.cc/0NRQyj7G/Gemini-Generated-Image-e34a5ie34a5ie34a.png">
-    <meta property="og:type" content="book">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Book",
-      "name": "The Wintering Well",
-      "subtitle": "A Cozy Guide to Finding Joy in the Quiet Season",
-      "author": {
-        "@type": "Person",
-        "name": "[Your Author Name]"
-      },
-      "datePublished": "2025-10-15",
-      "genre": ["Self-Help","Mindfulness","Seasonal"],
-      "description": "A cozy guide of short readings, journal prompts, and warm recipes to embrace rest and reflection during winter.",
-      "bookFormat": "EBook",
-      "image": "https://i.postimg.cc/0NRQyj7G/Gemini-Generated-Image-e34a5ie34a5ie34a.png",
-      "offers": {
-        "@type": "Offer",
-        "price": "5.99",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "#get-book"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "12847"
-      }
-    }
-    </script>
-
-    <link rel="stylesheet" href="styles-enhanced.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>The Wintering Well | A Cozy Guide to Finding Joy in the Quiet Season</title>
+    <meta name="description" content="Stop fighting the cold. Discover The Wintering Well—a guide to slow living, hygge, and deep rest. Includes warm recipes and gentle prompts.">
+    <meta name="author" content="A Friend">
     
+    <!-- Google Fonts: Premium Editorial Selection -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
     <style>
-        .hero-image-link {
-            text-decoration: none;
-            color: inherit;
-            display: block;
+        :root {
+            /* Palette: Nordic Winter & Warm Hearth */
+            --bg-body: #FDFBF7; /* Warm Paper */
+            --bg-dark: #1A2634; /* Deep Slate */
+            --primary: #2C3E50;
+            --accent: #C25B36; /* Rust/Ember */
+            --gold: #D4AF37;   /* Subtle Luxury */
+            --text-main: #2C3E50;
+            --text-light: #FDFBF7;
+            
+            /* Spacing & Layout */
+            --container-width: 1100px;
+            --section-padding: 100px 0;
+            
+            /* Typography */
+            --font-head: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
         }
-        .bonus-card-link {
+
+        /* --- BASE RESET & ANIMATIONS --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { 
+            background-color: var(--bg-body); 
+            color: var(--text-main); 
+            font-family: var(--font-body); 
+            line-height: 1.8; 
+            overflow-x: hidden; 
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Fade Up Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1, h2, h3 { font-family: var(--font-head); color: var(--primary); font-weight: 700; }
+        h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; margin-bottom: 25px; }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 20px; }
+        h3 { font-size: 1.5rem; margin-bottom: 10px; }
+        p { margin-bottom: 20px; font-size: 1.1rem; color: #4a5568; }
+        .italic { font-style: italic; font-family: var(--font-head); }
+        .accent-text { color: var(--accent); }
+
+        /* --- COMPONENTS --- */
+        .container { max-width: var(--container-width); margin: 0 auto; padding: 0 25px; }
+        
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--accent);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             text-decoration: none;
-            color: inherit;
-            display: block;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(194, 91, 54, 0.2);
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background-color: #a84623;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(194, 91, 54, 0.3);
+        }
+
+        /* --- HEADER / NAV --- */
+        .scarcity-bar {
+            background: var(--bg-dark);
+            color: white;
+            text-align: center;
+            padding: 12px;
+            font-size: 0.85rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            /* IMAGE CHANGE: Updated with your selection (Atmospheric Winter) */
+            background: linear-gradient(rgba(253, 251, 247, 0.85), rgba(253, 251, 247, 0.75)), url('https://images.unsplash.com/photo-1602891867216-78a0a30c18ea?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        /* CSS Pure 3D Book Cover */
+        .book-mockup-wrapper {
+            perspective: 1500px;
+            display: flex;
+            justify-content: center;
+        }
+        .book-cover {
+            width: 300px;
+            height: 460px;
+            background: var(--primary);
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateY(-25deg) rotateX(5deg);
+            box-shadow: 20px 20px 50px rgba(0,0,0,0.3);
+            border-radius: 4px 10px 10px 4px;
+            transition: transform 0.5s ease;
+        }
+        .book-cover:hover { transform: rotateY(-15deg) rotateX(0deg) scale(1.02); }
+        .book-spine {
+            position: absolute;
+            top: 0; bottom: 0; left: 0;
+            width: 40px;
+            background: #1a2530;
+            transform: translateX(-38px) rotateY(-90deg);
+            transform-origin: right;
+        }
+        .book-front {
+            position: absolute;
+            top: 0; bottom: 0; left: 0; right: 0;
+            /* IMAGE CHANGE: User provided real cover image */
+            background: url('https://img.sanishtech.com/u/2fe61a27a6f45ff762d375861755d3e1.jpg');
+            background-size: cover;
+            background-position: center;
+            border-left: 1px solid rgba(255,255,255,0.1);
+            border-radius: 0 4px 4px 0;
+        }
+        .book-title { font-family: var(--font-head); font-size: 2.2rem; line-height: 1.1; margin-bottom: 10px; border: 1px solid rgba(255,255,255,0.3); padding: 20px 10px; }
+        .book-author { font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; margin-top: auto; opacity: 0.8; }
+
+        /* --- EMOTIONAL HOOK SECTION --- */
+        .hook-section {
+            background: white;
+            padding: var(--section-padding);
+            text-align: center;
+        }
+        .divider {
+            height: 1px;
+            width: 100px;
+            background: var(--accent);
+            margin: 40px auto;
+        }
+
+        /* --- VISUAL INTERLUDE (Images) --- */
+        .visual-interlude {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 500px;
+        }
+        .visual-image {
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .visual-content {
+            background: var(--bg-dark);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px;
+        }
+        .visual-content h3 { color: white; }
+        .visual-content p { color: rgba(255,255,255,0.8); }
+
+        /* --- EXCERPT SECTION --- */
+        .excerpt-section {
+            background-color: #f4f1ea;
+            padding: 80px 0;
+            border-top: 1px solid #e2ddd5;
+            border-bottom: 1px solid #e2ddd5;
+        }
+        .paper-sheet {
+            background: #fff;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 60px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        .paper-sheet::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 8rem;
+            color: #f0ebe4;
+            font-family: var(--font-head);
+            line-height: 0;
+        }
+
+        /* --- FEATURES GRID --- */
+        .features-section { padding: var(--section-padding); }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+        .feature-item {
+            padding: 30px;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .feature-item:hover {
+            border-color: var(--accent);
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            background: #fdf2ee;
+            color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* --- REVIEWS SECTION --- */
+        .reviews-section {
+            background: white;
+            padding: var(--section-padding);
+        }
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        .review-card {
+            background: var(--bg-body);
+            padding: 30px;
+            border-radius: 8px;
+            position: relative;
+        }
+        .review-stars { color: var(--gold); margin-bottom: 15px; }
+        .review-author { font-weight: bold; margin-top: 15px; font-size: 0.9rem; color: var(--primary); }
+
+        /* --- EMAIL / SIMPLE VIEW SECTION --- */
+        .email-section {
+            background: var(--primary);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .email-form {
+            max-width: 500px;
+            margin: 30px auto 0 auto;
+            display: flex;
+            gap: 10px;
+        }
+        .email-input {
+            flex: 1;
+            padding: 15px 20px;
+            border-radius: 50px;
+            border: none;
+            font-size: 1rem;
+            font-family: var(--font-body);
+        }
+        .email-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .email-btn:hover { background: #d35400; }
+        
+        /* --- FINAL CTA SECTION --- */
+        .final-cta {
+            background: var(--bg-body);
+            padding: 80px 20px;
+            text-align: center;
+            border-top: 1px solid #e2ddd5;
+        }
+
+        /* --- FOOTER --- */
+        footer { background: #151e29; color: #718096; padding: 60px 0; text-align: center; font-size: 0.9rem; }
+        footer a { color: inherit; margin: 0 10px; }
+
+        /* --- POPUP STYLES --- */
+        .popup-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 2000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .popup-overlay.show { display: flex; opacity: 1; }
+        .popup-content {
+            background: white;
+            padding: 40px;
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            border-radius: 8px;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.5s ease;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            border-top: 5px solid var(--accent);
+        }
+        .popup-overlay.show .popup-content { transform: translateY(0); }
+        .close-popup {
+            position: absolute;
+            top: 15px; right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #999;
+        }
+        .close-popup:hover { color: #333; }
+        
+        /* --- MOBILE STICKY BUTTON --- */
+        .mobile-sticky {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            z-index: 999;
+            display: none; /* JS triggers this */
+            text-align: center;
+            animation: slideUp 0.5s ease;
+        }
+        @keyframes slideUp { from { transform: translateY(100px); } to { transform: translateY(0); } }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+            .book-mockup-wrapper { margin-bottom: 30px; order: -1; }
+            .feature-grid { grid-template-columns: 1fr; }
+            .visual-interlude { grid-template-columns: 1fr; height: auto; }
+            .email-form { flex-direction: column; }
+            h1 { font-size: 2.8rem; }
+            .mobile-sticky { display: block; }
         }
     </style>
 </head>
 <body>
-    <div id="snow-container"></div>
 
-    <div class="announcement-bar">
-        <div class="announcement-content">
-            🎁 <strong>WINTER LAUNCH SPECIAL:</strong> Get 40% OFF + Free Bonus Workbook ($14.99 Value) - 
-            <span id="countdown-timer">Ends in: <span id="timer">00:00:00</span></span>
-            <a href="#get-book" class="announcement-cta">Claim Offer →</a>
-        </div>
+    <!-- SCARCITY BAR -->
+    <div class="scarcity-bar">
+        ❄️ <strong>Seasonal Best Seller:</strong> This title is trending in <em>Hygge & Slow Living</em>. <span id="timer">Stock Low.</span>
     </div>
 
-    <nav class="navbar" id="mainNav">
-        <div class="nav-container">
-            <div class="logo">
-                <span class="snowflake-icon">❄</span> The Wintering Well
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contents">Contents</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#blog">Resources</a></li>
-            </ul>
-            <a href="#get-book" class="nav-cta-btn pulse">Get 40% OFF Now</a>
-        </div>
-    </nav>
-
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="urgency-badge flash">
-                    🔥 <strong>472 copies</strong> sold in last 24 hours
-                </div>
-
-                <h1>The Wintering Well</h1>
-                <h2>Find Peace in the Season Everyone Else Dreads</h2>
-                <p class="hero-subtitle">24 cozy chapters • 50+ mindfulness exercises • 15 soul-warming recipes • Personal reflection journal prompts</p>
-
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">4.9/5</span>
-                        <span class="stat-label">★★★★★ Rating</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">12,847+</span>
-                        <span class="stat-label">Happy Readers</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">96%</span>
-                        <span class="stat-label">Would Recommend</span>
-                    </div>
-                </div>
-
-                <div class="cta-buttons">
-                    <a href="#get-book" class="btn-primary btn-large pulse-continuous">
-                        <span class="btn-icon">🎁</span>
-                        Get Your Copy Now - 40% OFF
-                        <span class="btn-subtext">Only $5.99 (Reg. $9.99)</span>
-                    </a>
-                    <a href="#free-guide" class="btn-secondary btn-large">
-                        <span class="btn-icon">✨</span>
-                        Get Free Sample Chapter
-                    </a>
-                </div>
-
-                <div class="trust-badges">
-                    <div class="trust-item">✓ Instant Digital Delivery</div>
-                    <div class="trust-item">✓ 30-Day Money-Back Guarantee</div>
-                    <div class="trust-item">✓ Read on Any Device</div>
-                </div>
-
-                <div class="social-proof-ticker">
-                    <div class="ticker-item">Sarah from UK just purchased ✨</div>
-                    <div class="ticker-item">Michael from Canada just purchased ✨</div>
-                    <div class="ticker-item">Emma from US just purchased ✨</div>
-                </div>
-            </div>
-
-            <div class="hero-image">
-                <a href="#get-book" class="hero-image-link" aria-label="Get The Wintering Well">
-                    <div class="book-3d-container">
-                        <img src="https://i.postimg.cc/0NRQyj7G/Gemini-Generated-Image-e34a5ie34a5ie34a.png" alt="The Wintering Well book cover" class="book-cover-3d">
-                        <div class="gift-badge">
-                            <div class="gift-icon">🎁</div>
-                            <div class="gift-text">FREE<br>BONUSES<br>INSIDE</div>
-                        </div>
-                    </div>
-                    <div class="bonus-stack">
-                        <div class="bonus-item">✓ Winter Reflection Journal PDF</div>
-                        <div class="bonus-item">✓ 30-Day Mindfulness Calendar</div>
-                        <div class="bonus-item">✓ Exclusive Recipe Collection</div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section class="urgency-section">
+    <!-- HERO SECTION -->
+    <header class="hero">
         <div class="container">
-            <div class="urgency-box">
-                <div class="urgency-icon">⏰</div>
-                <div class="urgency-content">
-                    <h3>Limited Time Winter Launch Offer</h3>
-                    <p>This special pricing expires when the timer hits zero. After that, the price returns to $9.99 and bonuses are no longer included.</p>
-                    <div class="countdown-display">
-                        <div class="countdown-item">
-                            <span class="countdown-number" id="hours">23</span>
-                            <span class="countdown-label">Hours</span>
-                        </div>
-                        <div class="countdown-item">
-                            <span class="countdown-number" id="minutes">47</span>
-                            <span class="countdown-label">Minutes</span>
-                        </div>
-                        <div class="countdown-item">
-                            <span class="countdown-number" id="seconds">32</span>
-                            <span class="countdown-label">Seconds</span>
-                        </div>
-                    </div>
-                    <a href="#get-book" class="btn-primary btn-large pulse">Lock In Your 40% Discount Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="pas-section">
-        <div class="container">
-            <h2>Are You Struggling to Find Peace During the Dark Months?</h2>
-            <div class="pas-grid">
-                <div class="problem-box">
-                    <div class="problem-icon">😔</div>
-                    <h3>The Problem</h3>
-                    <ul>
-                        <li>Winter feels heavy, draining, and endless</li>
-                        <li>You're pressured to stay productive when you just want to rest</li>
-                        <li>Dark mornings and long nights affect your mood</li>
-                        <li>You lack meaningful rituals to make winter enjoyable</li>
-                        <li>Self-care feels complicated, not comforting</li>
-                    </ul>
-                </div>
-
-                <div class="solution-box">
-                    <div class="solution-icon">✨</div>
-                    <h3>The Solution</h3>
-                    <ul>
-                        <li><strong>Embrace winter</strong> as a season of rest, not resistance</li>
-                        <li><strong>Simple daily practices</strong> that take 5-10 minutes</li>
-                        <li><strong>Science-backed mindfulness</strong> for seasonal wellness</li>
-                        <li><strong>Cozy rituals</strong> that actually fit your real life</li>
-                        <li><strong>Feel peaceful, grounded,</strong> and genuinely content</li>
-                    </ul>
-                    <a href="#get-book" class="btn-primary">Start Your Wintering Well Journey</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contents" class="contents-detailed">
-        <div class="container">
-            <h2>What's Inside: 24 Chapters of Cozy Wisdom</h2>
-            <p class="section-subtitle">Click to explore each chapter and see exactly what you'll discover</p>
-
-            <div class="contents-accordion">
-                </div>
-
-            <div class="contents-cta">
-                <h3>Get All 24 Chapters + Bonuses Today</h3>
-                <p>Regular Price: <span class="strike-price">$9.99</span> | Today Only: <strong class="sale-price">$5.99</strong></p>
-                <a href="#get-book" class="btn-primary btn-large">Claim Your 40% Discount Now</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="reviews" class="reviews-section">
-        <div class="container">
-            <h2>What Readers Are Saying</h2>
-            <a href="#get-book" class="btn-primary btn-large">Join These Happy Readers Today</a>
-        </div>
-    </section>
-
-    <section class="bonus-section">
-        <div class="container">
-            <h2>🎁 Get These FREE Bonuses (Worth $44.97)</h2>
-            <p class="section-subtitle">When you order today, you'll also receive these exclusive gifts</p>
-
-            <div class="bonus-grid">
+            <div class="hero-grid">
                 
-                <a href="#get-book" class="bonus-card-link" aria-label="Get Bonus 1">
-                    <div class="bonus-card">
-                        <div class="bonus-image-placeholder">
-                            <div class="gift-box-icon">🎁</div>
+                <!-- Left: Copy -->
+                <div class="hero-text reveal">
+                    <h3>A Cozy Guide to the Quiet Season</h3>
+                    <h1>Don’t Just Endure Winter. <br><span class="accent-text" style="font-style: italic;">Cherish It.</span></h1>
+                    <p>In a world that demands you be bright and busy 24/7, <em>The Wintering Well</em> is your permission slip to stop, rest, and heal.</p>
+                    
+                    <div style="margin-top: 40px;">
+                        <a href="https://www.amazon.com/Wintering-Well-Mindfulness-Readings-Reflections-ebook/dp/B0FX3MFFSP" class="btn-primary" target="_blank">
+                            Get Your Copy
+                        </a>
+                        <div style="margin-top: 15px; font-size: 0.85rem; opacity: 0.7;">
+                            ✓ Instant Kindle Download &nbsp; | &nbsp; ✓ Paperback Available
                         </div>
-                        <h3>Bonus #1: Winter Reflection Journal</h3>
-                        <p class="bonus-value">Value: $14.99</p>
-                        <p>60-page guided journal with prompts for every chapter. Track your progress and deepen your practice throughout the season.</p>
                     </div>
-                </a>
+                </div>
 
-                <a href="#get-book" class="bonus-card-link" aria-label="Get Bonus 2">
-                    <div class="bonus-card">
-                        <div class="bonus-image-placeholder">
-                            <div class="gift-box-icon">📅</div>
+                <!-- Right: 3D Book Visual -->
+                <div class="book-mockup-wrapper reveal">
+                    <a href="https://www.amazon.com/Wintering-Well-Mindfulness-Readings-Reflections-ebook/dp/B0FX3MFFSP" target="_blank" style="text-decoration: none;">
+                        <div class="book-cover">
+                            <div class="book-spine"></div>
+                            <div class="book-front">
+                                <!-- Text removed to display the actual cover art provided -->
+                            </div>
                         </div>
-                        <h3>Bonus #2: 30-Day Mindfulness Calendar</h3>
-                        <p class="bonus-value">Value: $12.99</p>
-                        <p>Printable calendar with daily 5-minute practices. Never wonder what to do each day—we've planned it for you.</p>
-                    </div>
-                </a>
+                    </a>
+                </div>
 
-                <a href="#get-book" class="bonus-card-link" aria-label="Get Bonus 3">
-                    <div class="bonus-card">
-                        <div class="bonus-image-placeholder">
-                            <div class="gift-box-icon">🍲</div>
-                        </div>
-                        <h3>Bonus #3: Extended Recipe Collection</h3>
-                        <p class="bonus-value">Value: $9.99</p>
-                        <p>15 additional cozy recipes not in the main book. Soups, breads, warm drinks, and comfort foods.</p>
-                    </div>
-                </a>
-
-                <a href="#get-book" class="bonus-card-link" aria-label="Get Bonus 4">
-                    <div class="bonus-card">
-                        <div class="bonus-image-placeholder">
-                            <div class="gift-box-icon">🎧</div>
-                        </div>
-                        <h3>Bonus #4: Guided Meditation Audio</h3>
-                        <p class="bonus-value">Value: $7.00</p>
-                        <p>5 downloadable meditation tracks narrated specifically for The Wintering Well practices.</p>
-                    </div>
-                </a>
             </div>
+        </div>
+    </header>
 
-            <div class="total-value">
-                <h3>Total Bonus Value: <span class="strike-price">$44.97</span></h3>
-                <h2>Yours FREE Today!</h2>
-            </div>
-
-            <a href="#get-book" class="btn-primary btn-large pulse-continuous">Get The Book + All 4 Bonuses Now</a>
+    <!-- THE HOOK -->
+    <section class="hook-section">
+        <div class="container reveal">
+            <h2>Does Winter Feel Like a Struggle?</h2>
+            <p style="max-width: 700px; margin: 0 auto;">
+                We are told to fight the gloom. To push through the cold. To ignore our body's deep, ancestral need for rest. 
+                But what if the darkness wasn't an enemy? What if it was an invitation?
+            </p>
+            <div class="divider"></div>
+            <p class="italic" style="font-size: 1.3rem; color: var(--primary);">
+                "The Wintering Well is not a book of rules or resolutions. It is a soft place to land."
+            </p>
         </div>
     </section>
 
-    <section id="get-book" class="purchase-main">
+    <!-- VISUAL INTERLUDE (IMAGE CHANGED: Updated with your selection - Cozy details) -->
+    <section class="visual-interlude">
+        <div class="visual-image" style="background-image: url('https://plus.unsplash.com/premium_photo-1661741527893-f58f069142a6?auto=format&fit=crop&w=1350&q=80');"></div>
+        <div class="visual-content">
+            <h3>Find Beauty in Stillness</h3>
+            <p>Winter strips away the noise, leaving only the essential. Learn to appreciate the stark beauty of the season and the stillness it offers your soul.</p>
+        </div>
+    </section>
+
+    <!-- EXCERPT / TASTE THE WRITING -->
+    <section class="excerpt-section">
+        <div class="container reveal">
+            <div class="text-center" style="margin-bottom: 40px;">
+                <span style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; color: var(--accent);">Reading Sample</span>
+                <h3>The Solace of a Steaming Mug</h3>
+            </div>
+            <div class="paper-sheet">
+                <p>
+                    "Think of this book as a companion for the quiet moments. It is here for you on a frosty morning with your first cup of tea, on a grey afternoon when you need a pocket of peace, or on a long, dark evening as you curl up by the fire."
+                </p>
+                <p>
+                    "It is simply to have been present. To have found moments of peace amid the noise, to have felt the comfort of warmth in the cold... It is to have learned that there is life in the stillness, just as there is life in the bloom."
+                </p>
+                <p style="text-align: right; margin-top: 30px; font-weight: bold; font-family: var(--font-head);">— Page 53</p>
+            </div>
+            <div class="text-center" style="margin-top: 40px;">
+                <a href="https://www.amazon.com/Wintering-Well-Mindfulness-Readings-Reflections-ebook/dp/B0FX3MFFSP" class="btn-primary" target="_blank">
+                    Read More on Amazon
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES GRID -->
+    <section class="features-section">
         <div class="container">
-            <div class="purchase-hero">
-                <h2>Start Your Peaceful Winter Journey Today</h2>
-                <p class="purchase-subtitle">Choose your format and get instant access + all bonuses</p>
+            <div class="text-center reveal">
+                <h2>Inside the Guide</h2>
+                <p>No strict schedules. Just simple comforts.</p>
             </div>
 
-            <div class="purchase-grid">
-                <div class="purchase-option recommended">
-                    <div class="recommended-badge">🏆 MOST POPULAR</div>
-                    <h3>Complete Bundle</h3>
-                    <div class="price-display">
-                        <span class="original-price">$36.97</span>
-                        <span class="sale-price-big">$14.99</span>
-                        <span class="savings-badge">SAVE 59%</span>
-                    </div>
-                    <ul class="includes-list">
-                        <li>✅ eBook (PDF, ePub, Mobi)</li>
-                        <li>✅ Audiobook (MP3)</li>
-                        <li>✅ Printable Paperback PDF</li>
-                        <li>✅ ALL 4 Bonus Gifts ($44.97 value)</li>
-                        <li>✅ Lifetime Access & Updates</li>
-                        <li>✅ Read on Any Device</li>
-                        <li>✅ 30-Day Money-Back Guarantee</li>
-                    </ul>
-                    <a href="https://www.amazon.co.uk/dp/B0FXPZFFYC" class="btn-buy" target="_blank" rel="noopener noreferrer">
-                        Get Complete Bundle Now
-                        <span class="btn-subtext">Instant Digital Delivery</span>
-                    </a>
+            <div class="feature-grid">
+                <!-- 1 -->
+                <div class="feature-item reveal">
+                    <div class="icon-circle">🍂</div>
+                    <h3>Gentle Prompts</h3>
+                    <p>Journaling exercises designed to help you connect with your surroundings, like finding the "Beauty of Bare Branches."</p>
                 </div>
-
-                <div class="purchase-option">
-                    <h3>eBook Only</h3>
-                    <div class="price-display">
-                        <span class="original-price">$9.99</span>
-                        <span class="sale-price-big">$5.99</span>
-                        <span class="savings-badge">SAVE 40%</span>
-                    </div>
-                    <ul class="includes-list">
-                        <li>✅ eBook (PDF, ePub, Mobi)</li>
-                        <li>✅ Bonus #1: Reflection Journal</li>
-                        <li>✅ Bonus #2: 30-Day Calendar</li>
-                        <li>✅ Read on Any Device</li>
-                        <li>✅ Instant Download</li>
-                        <li>✅ 30-Day Money-Back Guarantee</li>
-                    </ul>
-                    <a href="https://www.amazon.co.uk/dp/B0FXPZFFYC" class="btn-buy" target="_blank" rel="noopener noreferrer">
-                        Get eBook Now
-                        <span class="btn-subtext">Available on Amazon</span>
-                    </a>
+                <!-- 2 -->
+                <div class="feature-item reveal">
+                    <div class="icon-circle">☕</div>
+                    <h3>Warm Recipes</h3>
+                    <p>Nourish your spirit with simple comforts: <em>Honey & Ginger Tea</em>, <em>Roasted Root Vegetables</em>, and <em>Spiced Hot Chocolate</em>.</p>
                 </div>
-
-                <div class="purchase-option">
-                    <h3>Paperback</h3>
-                    <div class="price-display">
-                        <span class="original-price">$24.99</span>
-                        <span class="sale-price-big">$16.99</span>
-                        <span class="savings-badge">SAVE 32%</span>
-                    </div>
-                    <ul class="includes-list">
-                        <li>✅ Physical Paperback Book</li>
-                        <li>✅ Beautiful Matte Finish Cover</li>
-                        <li>✅ Premium Cream Pages</li>
-                        <li>✅ Free Shipping Over $25</li>
-                        <li>✅ Perfect Gift Option</li>
-                        <li>✅ 30-Day Money-Back Guarantee</li>
-                    </ul>
-                    <a href="https://www.amazon.co.uk/dp/B0FX3MFFSP" class="btn-buy" target="_blank" rel="noopener noreferrer">
-                        Order Paperback
-                        <span class="btn-subtext">Available on Amazon</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="store-links">
-                <p class="store-label">Also available on:</p>
-                <div class="store-buttons">
-                    <a href="https://www.amazon.co.uk/dp/B0FXPZFFYC" class="store-btn amazon" target="_blank" rel="noopener noreferrer">📚 Amazon Kindle</a>
-                    <a href="https://www.amazon.co.uk/dp/B0FX3MFFSP" class="store-btn amazon" target="_blank" rel="noopener noreferrer">📦 Amazon Paperback</a>
-                    <a href="https://www.amazon.co.uk/dp/B0FXPZFFYC" class="store-btn amazon" target="_blank" rel="noopener noreferrer">🍎 Apple Books</a>
-                    <a href="https://www.amazon.co.uk/dp/B0FXPZFFYC" class="store-btn amazon" target="_blank" rel="noopener noreferrer">📖 Kobo</a>
-                    <a href="https://www.amazon.co.uk/dp/B0FXPZFFYC" class="store-btn amazon" target="_blank" rel="noopener noreferrer">🎧 Audible</a>
-                    <a href="https://www.amazon.co.uk/dp/B0FXPZFFYC" class="store-btn amazon" target="_blank" rel="noopener noreferrer">📱 Google Play</a>
-                </div>
-            </div>
-
-            <div class="guarantee-box">
-                <div class="guarantee-icon">🛡️</div>
-                <div class="guarantee-content">
-                    <h3>100% Satisfaction Guarantee</h3>
-                    <p>Try The Wintering Well for 30 days. If you don't find peace, comfort, and genuine value in these pages, simply email us and we'll refund every penny. No questions asked.</p>
+                <!-- 3 -->
+                <div class="feature-item reveal">
+                    <div class="icon-circle">🕯️</div>
+                    <h3>Short Readings</h3>
+                    <p>Bite-sized essays on "The Art of the Steaming Mug" and "The Glow of a Single Candle" for when your mind is tired.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="faq-section">
-        </section>
+    <!-- REVIEWS SECTION -->
+    <section class="reviews-section">
+        <div class="container">
+            <h2 class="text-center">What Readers Are Saying</h2>
+            <div class="reviews-grid">
+                <div class="review-card reveal">
+                    <div class="review-stars">★★★★★</div>
+                    <p>"I didn't realize how much I needed permission to just 'be' until I read this. A beautiful reminder that winter is for resting."</p>
+                    <div class="review-author">— Sarah J., London</div>
+                </div>
+                <div class="review-card reveal">
+                    <div class="review-stars">★★★★★</div>
+                    <p>"The recipes are simple but so comforting. The honey and ginger tea has become my daily ritual."</p>
+                    <div class="review-author">— Emily R., Toronto</div>
+                </div>
+                <div class="review-card reveal">
+                    <div class="review-stars">★★★★★</div>
+                    <p>"Finally, a book about winter that doesn't make me feel guilty for not being productive. Pure peace in book form."</p>
+                    <div class="review-author">— Mark T., New York</div>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 50px;">
+                <a href="https://www.amazon.com/Wintering-Well-Mindfulness-Readings-Reflections-ebook/dp/B0FX3MFFSP" class="btn-primary" target="_blank">
+                    Join the Community of Readers
+                </a>
+            </div>
+        </div>
+    </section>
 
+    <!-- VISUAL INTERLUDE 2 (IMAGE CHANGED: Updated with your selection - Warmth/Fireplace vibe) -->
+    <section class="visual-interlude" style="height: 400px;">
+        <div class="visual-content" style="background: var(--accent);">
+            <h3>Pockets of Peace</h3>
+            <p>Create your own sanctuary. Learn how to carve out small moments of tranquility even in the busiest of days.</p>
+        </div>
+        <div class="visual-image" style="background-image: url('https://images.unsplash.com/photo-1667988145532-5c4c420678ec?auto=format&fit=crop&w=1350&q=80');"></div>
+    </section>
+
+    <!-- SIMPLE VIEW / EMAIL SECTION -->
+    <section class="email-section">
+        <div class="container reveal">
+            <h2>Join the Inner Circle</h2>
+            <p style="color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto;">Receive a free "Winter Reflection" prompt every Sunday morning. No spam, just warmth.</p>
+            
+            <form class="email-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing! Check your inbox for your first reflection.');">
+                <input type="email" class="email-input" placeholder="Enter your email address..." required>
+                <button type="submit" class="email-btn">Send Me Warmth</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- FINAL CTA SECTION -->
     <section class="final-cta">
-        </section>
-
-    <footer class="footer">
-        </footer>
-
-    <div id="exit-popup" class="exit-popup">
+        <div class="container reveal">
+            <h2>Your Sanctuary Awaits</h2>
+            <p style="max-width: 600px; margin: 0 auto 30px auto;">Don't wait for Spring to feel peace. Embrace the quiet magic of winter today.</p>
+            <a href="https://www.amazon.com/Wintering-Well-Mindfulness-Readings-Reflections-ebook/dp/B0FX3MFFSP" class="btn-primary" target="_blank">
+                Buy on Amazon
+            </a>
         </div>
+    </section>
 
-    <div class="floating-cta" id="floatingCta">
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 The Wintering Well. All rights reserved.</p>
+            <p style="margin-top: 20px;">
+                <a href="#">Privacy</a>
+                <a href="#">Contact</a>
+            </p>
+            <p style="font-size: 0.8rem; margin-top: 40px; opacity: 0.5;">
+                As an Amazon Associate we earn from qualifying purchases.
+            </p>
         </div>
+    </footer>
 
-    <script src="script-enhanced.js"></script>
+    <!-- POPUP -->
+    <div class="popup-overlay" id="discountPopup">
+        <div class="popup-content">
+            <span class="close-popup" onclick="closePopup()">&times;</span>
+            <h3 style="color: var(--accent);">Wait! A Special Gift</h3>
+            <p>Don't leave empty-handed. Get the <strong>"3-Day Slow Living Starter Kit"</strong> sent to your inbox for free.</p>
+            <form onsubmit="event.preventDefault(); closePopup(); alert('Your kit is on the way!');" style="margin-top: 20px;">
+                <input type="email" placeholder="Your email here" style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;" required>
+                <button type="submit" class="btn-primary" style="width: 100%; border-radius: 4px;">Send It Now</button>
+            </form>
+            <p style="font-size: 0.8rem; margin-top: 15px; color: #999; cursor: pointer;" onclick="closePopup()">No thanks, I prefer to rush.</p>
+        </div>
+    </div>
+    
+    <!-- MOBILE STICKY BUTTON (JavaScript triggers display) -->
+    <div class="mobile-sticky" id="mobileCTA">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <span style="font-weight: bold; color: var(--primary);">Wintering Well</span>
+            <span style="color: var(--accent); font-weight: bold;">$9.99 Kindle</span>
+        </div>
+        <a href="https://www.amazon.com/Wintering-Well-Mindfulness-Readings-Reflections-ebook/dp/B0FX3MFFSP" class="btn-primary" target="_blank" style="width: 100%; padding: 12px;">Buy on Amazon</a>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        // 1. SCROLL ANIMATION
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            const elementVisible = 100;
+            revealElements.forEach((reveal) => {
+                const elementTop = reveal.getBoundingClientRect().top;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add('active');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+
+        // 2. POPUP LOGIC
+        const popup = document.getElementById('discountPopup');
+        
+        // Show popup after 5 seconds
+        setTimeout(() => {
+            popup.classList.add('show');
+        }, 5000);
+
+        function closePopup() {
+            popup.classList.remove('show');
+        }
+        
+        // 3. MOBILE CTA LOGIC
+        const mobileCTA = document.getElementById('mobileCTA');
+        const heroSection = document.querySelector('.hero');
+
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth < 900) {
+                const heroBottom = heroSection.getBoundingClientRect().bottom;
+                if (heroBottom < 0) {
+                    mobileCTA.style.display = 'block';
+                } else {
+                    mobileCTA.style.display = 'none';
+                }
+            } else {
+                mobileCTA.style.display = 'none';
+            }
+        });
+
+        // 4. COUNTDOWN TIMER
+        function startTimer(duration, display) {
+            var timer = duration, hours, minutes, seconds;
+            
+            // Define update function
+            function update() {
+                hours = parseInt(timer / 3600, 10);
+                minutes = parseInt((timer % 3600) / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                hours = hours < 10 ? "0" + hours : hours;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                // FIX: Added seconds to display string
+                display.textContent = "Order within " + hours + ":" + minutes + ":" + seconds + " for immediate delivery.";
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }
+
+            update(); // Run immediately so there is no 1s delay
+            setInterval(update, 1000);
+        }
+
+        window.onload = function () {
+            var fourHours = 60 * 60 * 4;
+            var display = document.querySelector('#timer');
+            if(display) startTimer(fourHours, display);
+        };
+    </script>
 </body>
 </html>
