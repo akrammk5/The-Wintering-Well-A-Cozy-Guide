@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://akrammk5.github.io/The-Wintering-Well-A-Cozy-Guide/sitemap.xml
