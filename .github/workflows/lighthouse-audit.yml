@@ -1,0 +1,110 @@
+name: Lighthouse production audit
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Lighthouse
+        run: npm install --global lighthouse@latest
+
+      - name: Browser version
+        run: |
+          google-chrome --version || chromium --version || chromium-browser --version
+
+      - name: Audit mobile
+        run: |
+          lighthouse "https://akrammk5.github.io/The-Wintering-Well-A-Cozy-Guide/" \
+            --quiet \
+            --chrome-flags="--headless --no-sandbox" \
+            --only-categories=performance,accessibility,best-practices,seo \
+            --output=json \
+            --output-path=mobile.json
+
+      - name: Audit desktop
+        run: |
+          lighthouse "https://akrammk5.github.io/The-Wintering-Well-A-Cozy-Guide/" \
+            --quiet \
+            --chrome-flags="--headless --no-sandbox" \
+            --preset=desktop \
+            --only-categories=performance,accessibility,best-practices,seo \
+            --output=json \
+            --output-path=desktop.json
+
+      - name: Print audit summary
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+
+          for (const mode of ['mobile', 'desktop']) {
+            const report = JSON.parse(fs.readFileSync(mode + '.json', 'utf8'));
+            const c = report.categories;
+            const a = report.audits;
+            const pct = (x) => Math.round((x?.score || 0) * 100);
+            const val = (id) => a[id]?.displayValue || null;
+
+            console.log('\n===== ' + mode.toUpperCase() + ' =====');
+            console.log(JSON.stringify({
+              scores: {
+                performance: pct(c.performance),
+                accessibility: pct(c.accessibility),
+                bestPractices: pct(c['best-practices']),
+                seo: pct(c.seo)
+              },
+              metrics: {
+                FCP: val('first-contentful-paint'),
+                LCP: val('largest-contentful-paint'),
+                TBT: val('total-blocking-time'),
+                CLS: val('cumulative-layout-shift'),
+                SI: val('speed-index')
+              }
+            }, null, 2));
+
+            const opportunities = Object.values(a)
+              .filter(x => x.details && x.details.type === 'opportunity' && x.numericValue > 0)
+              .sort((x,y) => (y.details?.overallSavingsMs || 0) - (x.details?.overallSavingsMs || 0))
+              .slice(0, 8)
+              .map(x => ({
+                id: x.id,
+                title: x.title,
+                displayValue: x.displayValue,
+                savingsMs: Math.round(x.details?.overallSavingsMs || 0)
+              }));
+            console.log('Top opportunities:');
+            console.log(JSON.stringify(opportunities, null, 2));
+
+            const failed = Object.values(a)
+              .filter(x => x.score !== null && x.score < 1 && x.scoreDisplayMode !== 'notApplicable')
+              .filter(x => !['performance'].includes(x.id))
+              .slice(0, 30)
+              .map(x => ({id:x.id,title:x.title,score:x.score,displayValue:x.displayValue}));
+            console.log('Notable failed/partial audits:');
+            console.log(JSON.stringify(failed, null, 2));
+          }
+          NODE
+
+      - name: Upload Lighthouse reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-production-reports
+          path: |
+            mobile.json
+            desktop.json
+          retention-days: 14
