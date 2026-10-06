@@ -101,7 +101,9 @@
     <!-- Google Fonts: Premium Editorial Selection -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet"></noscript>
 
     <style>
         :root {
@@ -109,7 +111,7 @@
             --bg-body: #FDFBF7; /* Warm Paper */
             --bg-dark: #1A2634; /* Deep Slate */
             --primary: #2C3E50;
-            --accent: #C25B36; /* Rust/Ember */
+            --accent: #BC522F; /* Rust/Ember - WCAG AA with white text */
             --gold: #D4AF37;   /* Subtle Luxury */
             --text-main: #2C3E50;
             --text-light: #FDFBF7;
@@ -201,11 +203,30 @@
             display: flex;
             align-items: center;
             position: relative;
-            /* IMAGE CHANGE: Updated with your selection (Atmospheric Winter) */
-            background: linear-gradient(rgba(253, 251, 247, 0.85), rgba(253, 251, 247, 0.75)), url('https://images.unsplash.com/photo-1602891867216-78a0a30c18ea?auto=format&fit=crop&w=1440&q=70');
-            background-size: cover;
-            background-position: center;
+            overflow: hidden;
+            isolation: isolate;
+            background: var(--bg-body);
             padding: 80px 0;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(rgba(253, 251, 247, 0.85), rgba(253, 251, 247, 0.75));
+            z-index: 1;
+            pointer-events: none;
+        }
+        .hero > .container {
+            position: relative;
+            z-index: 2;
         }
 
         .hero-grid {
@@ -292,7 +313,7 @@
             padding: 60px;
         }
         .visual-content h3 { color: white; }
-        .visual-content p { color: rgba(255,255,255,0.8); }
+        .visual-content p { color: #fff; }
 
         /* --- EXCERPT SECTION --- */
         .excerpt-section {
@@ -388,8 +409,10 @@
         }
 
         /* --- FOOTER --- */
-        footer { background: #151e29; color: #718096; padding: 60px 0; text-align: center; font-size: 0.9rem; }
-        footer a { color: inherit; margin: 0 10px; }
+        footer { background: #151e29; color: #CBD5E1; padding: 60px 0; text-align: center; font-size: 0.9rem; }
+        footer p, footer a { color: #CBD5E1; }
+        footer a { margin: 0 10px; }
+        footer .legal-note { color: #B7C0CD; font-size: 0.8rem; margin-top: 40px; }
 
         /* --- MOBILE STICKY BUTTON --- */
         .mobile-sticky {
@@ -483,6 +506,17 @@
     <main id="main-content">
     <!-- HERO SECTION -->
     <header class="hero">
+        <img
+            class="hero-bg"
+            src="https://images.unsplash.com/photo-1602891867216-78a0a30c18ea?auto=format&fit=crop&w=1100&q=68"
+            srcset="https://images.unsplash.com/photo-1602891867216-78a0a30c18ea?auto=format&fit=crop&w=720&q=68 720w, https://images.unsplash.com/photo-1602891867216-78a0a30c18ea?auto=format&fit=crop&w=1100&q=68 1100w, https://images.unsplash.com/photo-1602891867216-78a0a30c18ea?auto=format&fit=crop&w=1440&q=68 1440w"
+            sizes="100vw"
+            width="1440"
+            height="960"
+            alt=""
+            aria-hidden="true"
+            decoding="async"
+            fetchpriority="high">
         <div class="container">
             <div class="hero-grid">
                 
@@ -534,7 +568,15 @@
     <!-- VISUAL INTERLUDE (IMAGE CHANGED: Updated with your selection - Cozy details) -->
     <section class="visual-interlude">
         <figure class="visual-image">
-            <img src="https://plus.unsplash.com/premium_photo-1661741527893-f58f069142a6?auto=format&fit=crop&w=1100&q=70" width="1100" height="733" alt="Cozy winter details and a warm seasonal atmosphere" loading="lazy" decoding="async">
+            <img
+                src="https://plus.unsplash.com/premium_photo-1661741527893-f58f069142a6?auto=format&fit=crop&w=900&q=68"
+                srcset="https://plus.unsplash.com/premium_photo-1661741527893-f58f069142a6?auto=format&fit=crop&w=600&q=68 600w, https://plus.unsplash.com/premium_photo-1661741527893-f58f069142a6?auto=format&fit=crop&w=900&q=68 900w, https://plus.unsplash.com/premium_photo-1661741527893-f58f069142a6?auto=format&fit=crop&w=1100&q=68 1100w"
+                sizes="(max-width: 900px) 100vw, 50vw"
+                width="1100"
+                height="733"
+                alt="Cozy winter details and a warm seasonal atmosphere"
+                loading="lazy"
+                decoding="async">
         </figure>
         <div class="visual-content">
             <h3>Find Beauty in Stillness</h3>
@@ -633,7 +675,15 @@
             <p>Create your own sanctuary. Learn how to carve out small moments of tranquility even in the busiest of days.</p>
         </div>
         <figure class="visual-image">
-            <img src="https://images.unsplash.com/photo-1667988145532-5c4c420678ec?auto=format&fit=crop&w=1100&q=70" width="1100" height="733" alt="Warm winter fireplace atmosphere" loading="lazy" decoding="async">
+            <img
+                src="https://images.unsplash.com/photo-1667988145532-5c4c420678ec?auto=format&fit=crop&w=900&q=68"
+                srcset="https://images.unsplash.com/photo-1667988145532-5c4c420678ec?auto=format&fit=crop&w=600&q=68 600w, https://images.unsplash.com/photo-1667988145532-5c4c420678ec?auto=format&fit=crop&w=900&q=68 900w, https://images.unsplash.com/photo-1667988145532-5c4c420678ec?auto=format&fit=crop&w=1100&q=68 1100w"
+                sizes="(max-width: 900px) 100vw, 50vw"
+                width="1100"
+                height="733"
+                alt="Warm winter fireplace atmosphere"
+                loading="lazy"
+                decoding="async">
         </figure>
     </section>
 
@@ -694,7 +744,7 @@
                 <a href="privacy.html">Privacy</a>
                 <a href="contact.html">Contact</a>
             </p>
-            <p style="font-size: 0.8rem; margin-top: 40px; opacity: 0.5;">
+            <p class="legal-note">
                 Purchases are completed on Amazon. Amazon and Kindle are trademarks of Amazon.com, Inc. or its affiliates.
             </p>
         </div>
@@ -733,17 +783,29 @@
 
         const mobileCTA = document.getElementById('mobileCTA');
         const heroSection = document.querySelector('.hero');
+        const mobileQuery = window.matchMedia('(max-width: 899px)');
+        let heroIsPast = false;
 
-        function updateMobileCTA() {
-            if (!mobileCTA || !heroSection) return;
-            const isMobile = window.matchMedia('(max-width: 899px)').matches;
-            const heroIsPast = heroSection.getBoundingClientRect().bottom < 0;
-            mobileCTA.style.display = isMobile && heroIsPast ? 'block' : 'none';
+        function syncMobileCTA() {
+            if (!mobileCTA) return;
+            mobileCTA.style.display = mobileQuery.matches && heroIsPast ? 'block' : 'none';
         }
 
-        window.addEventListener('scroll', updateMobileCTA, { passive: true });
-        window.addEventListener('resize', updateMobileCTA, { passive: true });
-        updateMobileCTA();
+        if (mobileCTA && heroSection && 'IntersectionObserver' in window) {
+            const heroObserver = new IntersectionObserver(([entry]) => {
+                heroIsPast = !entry.isIntersecting;
+                syncMobileCTA();
+            }, { threshold: 0 });
+            heroObserver.observe(heroSection);
+        }
+
+        if (mobileQuery.addEventListener) {
+            mobileQuery.addEventListener('change', syncMobileCTA);
+        } else {
+            mobileQuery.addListener(syncMobileCTA);
+        }
+
+        syncMobileCTA();
     </script>
 </body>
 </html>
